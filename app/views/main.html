@@ -1,0 +1,38 @@
+<div class="banner-wrapper">
+  <div class="ribbon-wrapper">
+    <span class="ribbon">For ages 2-7</span>
+  </div>
+  <span id="image">
+        <span id="image-inner">
+        </span>
+    </span>
+  <div class="banner-content">
+    <h1>200<span class="special-char">+</span> Premium Storybooks and Songs</h1>
+    <p class="tagline">Designed to Motivate Your Child to Read</p>
+  
+    <div class="free-trial">
+      <h4>Start Your <strong>FREE</strong> Trial Now!</h4>
+
+      <form>
+        <div class="form-group">
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Please enter your email">
+        </div>
+        <button type="submit" id="start_reading" class="btn launch-btn">Start Reading</button>
+    </form>
+    
+      <p class="footnote">Ready for Unlimited Access? <a class="join-now">Join Now</a><br>
+      <p>Available on Web, iOS, Androit and more</p></p>
+    </div>
+  </div>
+</div>
+
+<div class="books-banner">
+    <h2>Capture Children<span class="special-char">'</span>s Attention with High Interest Stories</h2>
+    <div class="category__navigation">
+        <span class="category__name" ng-repeat="item in categories.items" ng-class="{'category--active': categories.selected==item.name}" ng-click="changeCategory(item.name)">{{ item.name }}
+        </span>
+    </div>
+    <carousel data-items="book_names"></carousel>
+    <button class="btn launch-btn">Launch Speakaboos
+    </button>
+</div>

@@ -1,0 +1,475 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+@import 'variables';
+
+/*default version*/
+@font-face {
+  font-family: 'ProbaPro'; /* instead of uniform */
+  src: 
+       local('ProbaPro'),
+       local('Proba_Pro'),
+       local('Proba-Pro'),
+       url('../fonts/ProbaPro.otf') 
+       format('opentype');    
+}
+
+/*default Header version*/
+@font-face {
+  font-family: 'NexaSlab';
+  src: 
+       local('NexaSlab'),
+       local('Nexa_Slab'),
+       local('Nexa-Slab'),
+       url('../fonts/NexaSlab.otf') 
+       format('opentype');    
+}
+/*bold version*/
+@font-face {
+  font-family: 'NexaSlabBold';
+  src: 
+       local('NexaSlabBold'),
+       local('Nexa_Slab_Bold'),
+       local('Nexa-Slab-Bold'),
+       url('../fonts/NexaSlabBold.otf') 
+       format('opentype');    
+} 
+
+body {
+  padding: 0;
+  font-family: 'ProbaPro', sans-serif;
+  color: $header-text-color;
+}
+
+.line {
+  border-top: 1px solid $light-gray-color;
+  position: relative;
+  padding: 10px;
+  margin: 0 $side-space 10px;
+
+  .glyphicon {
+    font-size: 0.75em;
+    top: 0px;
+  }
+
+  .signin {
+    position: absolute;
+    top: -50%;
+    right: 0px;
+    background: $white-color;
+    padding: 2px 10px 0;
+
+  }
+}
+
+.header{
+  margin-bottom: 0px;
+  border-bottom: 0px;
+}
+
+.navbar-right{
+  float: right; 
+}
+
+.navbar {
+
+  font-size: 1.2em;
+  margin: 20px $side-space 15px;
+  background-color: transparent;
+  border-color: transparent;
+
+  .logo {
+    margin: 10px 0;
+  }
+
+  .special-launch {
+    margin-top: 8px;
+    margin-left: 20px;
+  }
+}
+
+
+
+
+.launch-btn {
+  background-color: $launch-color;
+  font-weight: bold;
+  color: $white-color;
+  padding: 7px 30px;
+  font-size: 1.2em;
+
+  &:hover, &:focus {
+    background-color: lighten($launch-color, 10%);
+    color: $white-color;
+  }
+}
+
+.special-launch {
+  padding: 5px 10px; 
+  background-color: $special-launch-color;   
+  color: $white-color;
+  font-size: 1.05em;
+
+  &:hover, &:focus {
+    background-color: lighten($special-launch-color, 5%);  
+    color: $white-color; 
+  }
+
+  .glyphicon {
+    font-size: 0.75em;
+    margin-left: 3px;
+  }
+}
+
+/** buttons end **/
+
+/** overriding bootstrap navbar **/
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    
+    color: lighten($header-text-color, 20%);
+    background-color: transparent;
+}
+
+.special-char {
+  font-family: ProbaPro;
+}
+
+/** hero image start **/
+
+#image {
+  background: url(../images/top_banner.png) no-repeat;
+  display: inline-block;
+  width: 100%;
+  font-size: 0;
+  line-height: 0;
+  vertical-align: middle;
+  background-size: 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+#image-inner {
+    display: block;
+    height: 0;
+    padding-top: 46.08%; /* image ratio */
+}
+
+/** hero image ends **/
+
+/** hero content **/
+
+.banner-wrapper {
+  position: relative;
+}
+
+  h1, .tagline {
+    font-family: NexaSlab;
+    font-size: 4vw;
+    margin-bottom: 0;
+  }
+
+.banner-content {
+  position: absolute;
+  top: 10px;
+  text-align: center;
+  width: 100%;
+  color: $white-color;
+
+  .tagline {
+    font-size: 2.5vw;
+    font-style: italic;
+  } 
+
+  .free-trial {
+    float: right;
+    text-align: center;
+    margin-right: $side-space;
+    margin-top: 20px;
+
+    >* {
+      width: 100%;
+    }
+
+    strong {
+      font-size: 1.1em;
+    }
+
+    input, .launch-btn {
+      border-radius: 8px;
+      height: auto;
+      font-size: 1.2em;
+      width: 100%;
+    }
+
+    .footnote {
+      margin-top: 55px;
+
+      a {
+        color: $white-color;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+
+
+/** hero content ends **/
+
+
+
+/** carousel styles start **/
+
+.carousel-wrapper {
+  position: relative;
+
+  #navNext, #navPrev {
+    position: absolute;
+    background: $carousel-arrow-color;
+    border-radius: 15px;
+    padding: 15px;
+    width: 0px;
+    height: 0px;
+    top: 50%;
+    margin-top: -15px;
+  }
+
+  #navNext {
+    right: 40px;
+  }
+
+  #navPrev {
+    left: 40px;
+  }
+
+  #navNext .glyphicon:before, #navPrev .glyphicon:before {
+      top: -20px;
+      position: absolute;
+      color: $white-color;
+  }
+  #navNext .glyphicon:before {
+    left: -5px;
+  }
+  #navPrev .glyphicon:before { 
+      right: -5px;
+  }
+
+  #navNext.disable .glyphicon:before, #navPrev.disable .glyphicon:before {
+    color: $light-gray-color;
+  }
+
+}
+
+
+.books-banner {
+  text-align : center;
+  font-family: NexaSlab;
+  margin-bottom: 30px;
+}
+
+.disable {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+
+.carousel {
+  text-align : center;
+  margin: 0 70px;
+  overflow: hidden;
+
+  .carousel__item img {
+      width: 100%;
+  }
+
+  .carousel__item {
+      display: inline-block;
+      margin: 1%;
+      width: 18%;
+  }
+
+  .carousel__list {
+      list-style: none;
+      padding: 0;
+      white-space: nowrap;
+      -moz-transition: all 0.4s ease-out;  /* FF4+ */
+    -o-transition: all 0.4s ease-out;  /* Opera 10.5+ */
+    -webkit-transition: all 0.4s ease-out;  /* Saf3.2+, Chrome */
+    -ms-transition: all 0.4s ease-out;  /* IE10 */
+    transition: all 0.4s ease-out;
+    position: relative;
+    left:0;
+  }
+}
+
+/** carousel styles end **/
+
+.category__navigation {
+  border-bottom: 1px solid $light-gray-color;
+  margin: 0 $side-space;
+
+  .category__name {
+    display: inline-block;
+    margin: 1%;
+    margin-bottom: 0px;
+    cursor:pointer;
+    font-size: 0.8em;
+
+    &:hover {
+      color : $underline-blue;
+    }
+  }
+
+  .category--active {
+    color : $underline-blue;
+    border-bottom: 3px solid $underline-blue;
+  }
+}
+
+/*doc
+---
+title: Typography
+name: h1
+category: Base CSS
+---
+
+```html_example_h1
+
+<h1>200 Premium Storybooks and Songs</h1>
+
+```
+
+*/
+
+
+/*doc
+---
+title: Buttons
+name: button
+category: Base CSS
+---
+
+```html_example_table
+<button class="btn launch-btn">Click</button>
+
+<button class="btn special-launch"> Speakaboos !</button>
+```
+
+*/
+
+/** buttons **/
+
+/*doc
+---
+title: Section Highlight
+name: Section Highlight Underline
+category: Base CSS
+---
+
+```html_example_highlight
+
+<div class="category__navigation">
+        <span class="category--active">POPULAR CHARACTERS</span>
+        <span>BEDTIME STORIES</span>
+        <span>NURSERY RHYMES</span>
+</div>
+
+```
+
+*/
+
+
+
+/* top ribbon */
+
+.ribbon-wrapper {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.ribbon {
+    color: #fff;
+    text-align: center;
+    position: relative;
+    padding: 15px 0;
+    left: -40px;
+    top: 20px;
+    width: 300px;
+    background-color: $underline-blue;
+    display: block;
+    transform: rotate(45deg);
+    text-transform: uppercase;
+    font: bold ProbaPro;
+}
+
+/*doc
+---
+title: Corner Ribbon
+name: Corner Ribbon
+category: Base CSS
+---
+
+```html_example_ribbon
+
+<div class="banner-wrapper">
+  <div class="ribbon-wrapper">
+    <span class="ribbon">For ages 2-7</span>
+  </div>
+</div>  
+
+```
+
+*/
+
+@media screen and (max-width: 765px) {
+
+  .header-navbar-ul{ 
+    width: 100%;
+    text-align: center;
+    .header-navbar-li{
+      width : 100%;
+    }
+  }
+
+  #js-navbar-collapse{
+    display: block;
+  }
+    #exampleInputEmail1{
+      width: 69%;
+      padding: 2px;
+      float: right;
+      margin-right: 36px;
+    }
+
+    #start_reading{
+      width: 68%;
+      float: right;
+      padding: 2px;
+      margin-top: 5px;
+      margin-right : 36px;
+    }
+
+    .form-group {
+      margin-bottom: -10px;
+    }
+
+    h4{
+      font-size: 12px;
+    }
+
+    .footnote{
+     display:none;
+    }
+
+    .banner-content .free-trial {
+      margin-top: -5px;
+    }
+  }

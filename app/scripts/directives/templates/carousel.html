@@ -1,0 +1,15 @@
+<div class="carousel-wrapper">
+	<a id="navPrev" class="disable" href="#">
+			<span class="glyphicon glyphicon-triangle-left"></span>
+		</a>
+		<a id="navNext" href="#">
+			<span class="glyphicon glyphicon-triangle-right"></span>
+	</a>
+	<div class="carousel">
+		<ul class="carousel__list">
+			<li ng-repeat="item in items" class="carousel__item">
+				<img ng-src="{{item.path}}">
+			</li>
+		</ul>
+	</div>
+</div>

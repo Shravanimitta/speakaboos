@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Styleguide for Speakaboos></title>
+    <!-- Styleguide CSS -->
+    <link rel="stylesheet" href="css/github.css">
+
+    <!-- CSS to be documented -->
+    <link rel="stylesheet" href="../styles/main.css">
+  </head>
+  <style>
+    .header{
+      height: 60px;
+      font-size: 30px;
+      background-color: #50bf00;
+      color: #fff;
+      padding: 10px;
+    }
+
+    .listBorderedHover>li:first-child {
+      border-top: 1px solid transparent;
+    }
+
+    .listBorderedHover>li {
+      margin: 0;
+    }
+
+    .listBordered>li, .listBorderedHover>li {
+      padding: 10px;
+      border-top: 1px solid #e9e9e9;
+    }
+
+    .componentList{
+      border: 1px solid #e9e9e9;
+      width: 200px;
+      margin-right: 0;
+      display: inline-block;
+      border-radius: 10px;
+      padding-left: 0px;
+    }
+
+    a, a:hover, a:focus, .linkLowlight {
+     text-decoration: none;
+    }
+
+    .category--active{
+      margin-right: 20px;
+    }
+    
+    ul{
+      list-style: none;
+    }
+
+    .content{
+      margin-top: 20px;
+    }
+
+    p{
+      display: none;
+    }
+
+    .codeTable, .codeExample{
+      margin-bottom: 60px;
+    }
+
+    .category__navigation >  span{
+      margin-right: 20px;
+    }
+
+    pre{
+      margin-left: 5px;
+    }
+        
+    .ribbon{
+      color: #fff;
+      text-align: center;
+      position: relative;
+      padding: 15px 0;
+      left: -38px;
+      top: 16px;
+      width: 305px;
+      background-color: #0080ff;
+      display: block;
+      transform: rotate(45deg);
+      text-transform: uppercase;
+    }
+  </style>
+  <body>
+  <div class="header">Styleguide for Speakaboos</div>
+    <div class="container">
+      <!-- <nav>
+        <ul>
+        <% @categories.each do |category, file_name| %>
+          <li><a href="<%= file_name %>"><%= category %></a></li>
+        <% end %>
+        </ul>
+      </nav> -->
+
+      <section class="content">
+        <ul class="componentList listBorderedHover">
+        <% @blocks.each do |b| %>
+          <li><a href="#<%= b[:name] %>"><%= b[:title] %></a></li>
+        <% end %>
+        </ul>
